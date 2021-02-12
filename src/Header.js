@@ -19,7 +19,7 @@ const Header = ()=>{
     
 
     return (
-        <AppBar position="static">
+        <AppBar style={{backgroundColor:"#6200EE"}} position="static">
             <Toolbar>
                 <Typography  variant="h6" className={classes.title}>
                     News

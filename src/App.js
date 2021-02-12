@@ -15,7 +15,7 @@ function App() {
   const classes = useStyles();
   return (
     <>
-      <Grid container direction="column">
+      <Grid spacing={2} container direction="column">
          <Grid item> 
             <Header/>
          </Grid>

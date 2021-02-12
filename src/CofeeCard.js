@@ -13,7 +13,7 @@ import ShareIcon from '@material-ui/icons/ShareRounded';
 import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles((theme)=>({
-    root: {
+      root: {
         
       },
       bullet: {
@@ -27,13 +27,28 @@ const useStyles = makeStyles((theme)=>({
       pos: {
         marginBottom: 12,
       },
+      purpleColor:{
+          color: "#6200EE"
+      }
+    
 }))
+
+
+
+
 
 
 const CofeeCard = (props) =>{
 
     const classes = useStyles();
     const {title,subtitle,price,description,avatarUrl,imageUrl} = props;
+
+    let modDesc = description.toString();
+        if(modDesc.length>70){
+            modDesc = modDesc.substring(0,65).concat("...");
+        }
+    
+
     return(
         <Card className={classes.root}>
             <CardHeader
@@ -42,7 +57,7 @@ const CofeeCard = (props) =>{
                  }
                 action={
                     <IconButton aria-label="settings">
-                        <ShareIcon />
+                        <ShareIcon style={{color:"#6200EE"}} />
                     </IconButton>
                 }
                 title={title}
@@ -53,14 +68,14 @@ const CofeeCard = (props) =>{
                 image={imageUrl}
                 title="Paella dish"
              />
-            <CardContent>
+            <CardContent >
                 <Typography variant="body2" component="p">
-                    {description}
+                   {modDesc}
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Buy Now</Button>
-                <Button size="small">Offer</Button>
+                <Button style={{fontWeight:"bold"}} className={classes.purpleColor} size="small">Buy Now</Button>
+                <Button style={{fontWeight:"bold"}} className={classes.purpleColor} color="primary" size="small">Offer</Button>
             </CardActions>
         </Card>
     );
