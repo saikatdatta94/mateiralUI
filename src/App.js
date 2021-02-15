@@ -9,17 +9,20 @@ const useStyles = makeStyles((theme) => ({
   root: {
     
   },
+  bigContainer:{
+    marginTop: 16,
+  }
 }));
 
 function App() {
   const classes = useStyles();
   return (
     <>
-      <Grid spacing={2} container direction="column">
+      <Grid container direction="column">
          <Grid item> 
             <Header/>
          </Grid>
-         <Grid item container>
+         <Grid className={classes.bigContainer} item container>
             <Grid item xs={false} sm={2}>
                       
             </Grid>
